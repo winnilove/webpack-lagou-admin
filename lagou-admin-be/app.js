@@ -8,6 +8,10 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var positionRouter = require('./routes/position');
 
+//消费者注册
+// var consumerRouter = require('./routes/consumer');
+
+
 
 var cookieSession = require('cookie-session')
 
@@ -33,6 +37,8 @@ app.use(cookieSession({
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/position', positionRouter);
+// app.use('/api/consumer', consumerRouter);
+
 
 
 // catch 404 and forward to error handler

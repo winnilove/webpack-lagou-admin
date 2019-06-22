@@ -13,6 +13,8 @@
 
 import positionTpl from '../views/position-list.hbs'
 import positionAddTpl from '../views/position-add.hbs'
+import positionUpdateTpl from '../views/position-update.hbs'
+
 import oAuth from '../utils/oAuth'
 
 export const render = async (req, res, next) => {
@@ -51,7 +53,6 @@ function bindPositionAddEvent(res) {
   $('#posback').on('click', (e) => {
     res.back()
   })
-
   $('#possubmit').on('click', (e) => {
     $('#possave').ajaxSubmit({
       resetForm: true,
