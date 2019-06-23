@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 var positionRouter = require('./routes/position');
 
 //消费者注册
-// var consumerRouter = require('./routes/consumer');
+var consumerRouter = require('./routes/consumer');
 
 
 
@@ -37,7 +37,7 @@ app.use(cookieSession({
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/position', positionRouter);
-// app.use('/api/consumer', consumerRouter);
+app.use('/api/consumers', consumerRouter);
 
 
 

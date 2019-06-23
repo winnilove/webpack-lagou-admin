@@ -1,0 +1,68 @@
+<div class="box">
+            <div class="box-header">
+              <h3 class="box-title">用户管理</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody><tr>
+                  <th>ID</th>
+                  <th>用户名</th>
+                  <th>手机号</th>
+                  <th>邮箱</th>
+                  <th>注册时间</th>
+                  <th>用户等级</th>
+                  <th>备注</th>
+                </tr>
+                 {{#if hasResult}}
+                {{#each data}}
+                <tr>
+                  <td>{{_id}}</td>
+                  <td>{{username}}</td>
+                   <td>{{phoneNumber}}</td>
+                   <td>{{email}}</td>
+                  <td>{{regtime}}</td>
+                  <td><span class="label label-success">{{rank}}</span></td>
+                  <td>{{note}}</td>
+                </tr>
+                {{/each}}
+                {{else}}
+                <tr>
+                  <td colspan="8"> 暂无用户注册. </td>
+                </tr>
+                {{/if}}
+                {{!-- <tr>
+                  <td>219</td>
+                  <td>Alexander Pierce</td>
+                  <td>11-7-2014</td>
+                  <td><span class="label label-warning">Pending</span></td>
+                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                </tr>
+                <tr>
+                  <td>657</td>
+                  <td>Bob Doe</td>
+                  <td>11-7-2014</td>
+                  <td><span class="label label-primary">Approved</span></td>
+                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                </tr>
+                <tr>
+                  <td>175</td>
+                  <td>Mike Doe</td>
+                  <td>11-7-2014</td>
+                  <td><span class="label label-danger">Denied</span></td>
+                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                </tr> --}}
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+</div>
