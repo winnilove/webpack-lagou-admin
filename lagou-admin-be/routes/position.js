@@ -9,5 +9,8 @@ router.route('/')
     .all(oAuthBase)
     .get(positionController.findAll)//获取所用的数据
     .post(fileUpload.uploadFile, positionController.save)//上传表单数据
+    .delete(positionController.delete)
+router.get('/one', positionController.findOne)
+router.post('/update', fileUpload.uploadFile, positionController.update)
 
 module.exports = router

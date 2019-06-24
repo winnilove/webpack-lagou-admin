@@ -12,6 +12,7 @@ class FileUpload{
           }
     }
     uploadFile(req,res,next){
+        res.set('Content-Type', 'application/json; charset=utf-8')
         let filename = ''
         // storage 定义文件存储信息
         let storage = multer.diskStorage({
@@ -41,14 +42,20 @@ class FileUpload{
         }).single('companyLogo')
 
         upload(req,res,(err)=>{
-            if(err){
-                res.render('fail',{
-                    data:JSON.stringify(err.message)
-                })
-            }else{
-                // 传递filename 到下个中间件
-                req.filename = filename
+            //req.body.companyLogo === ''说明(修改时)没有上传图片
+            if(req.body.companyLogo === ''){
+                //下一个中间件
                 next()
+            }else{
+                if(err){
+                    res.render('fail',{
+                        data:JSON.stringify(err.message)
+                    })
+                }else{
+                    // 传递filename 到下个中间件
+                    req.filename = filename
+                    next()
+                }
             }
         })
 
